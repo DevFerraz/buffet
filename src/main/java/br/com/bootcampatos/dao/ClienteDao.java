@@ -21,4 +21,8 @@ public class ClienteDao {
 	public List<Cliente> getAll(){
 		return new ArrayList<Cliente>();
 	}
+	
+	public void delete(Cliente cliente) {
+		
+	}
 }
