@@ -4,7 +4,9 @@ public class Telefone {
 	private String numero;
 	private String tipoTelefone;
 	
-	public Telefone() {}
+	public Telefone() {
+		
+	}
 	
 	public Telefone(String numero, String tipo) {
 		super();

@@ -7,8 +7,7 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306
-			/alunojpa" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/elegance_buffet" />
 			<property name="javax.persistence.jdbc.user" value="natan" />
 			<property name="javax.persistence.jdbc.password" value="Brutus531890@" />
 

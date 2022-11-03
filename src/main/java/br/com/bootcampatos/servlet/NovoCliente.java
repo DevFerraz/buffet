@@ -2,17 +2,17 @@ package br.com.bootcampatos.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import br.com.bootcampatos.dao.ClienteDao;
 import br.com.bootcampatos.dao.TelefoneDao;
 import br.com.bootcampatos.model.Cliente;
 import br.com.bootcampatos.model.Telefone;
 import br.com.bootcampatos.util.JPAUtil;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /*
  * Servlet implementation class NovoCliente
@@ -21,7 +21,7 @@ import br.com.bootcampatos.util.JPAUtil;
 public class NovoCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
            
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {			
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramNome = request.getParameter("nome");
 		String paramCpf = request.getParameter("cpf");

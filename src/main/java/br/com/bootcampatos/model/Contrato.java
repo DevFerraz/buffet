@@ -2,16 +2,16 @@ package br.com.bootcampatos.model;
 
 public class Contrato {
 	private Cliente cliente;
-	private Integer quantidadeConvidados;
+	private double quantidadeConvidados;
 	private boolean sobremesa;
 	private Empresa empresa;
-	
-	
-	public Integer getQuantidadeConvidados() {
+
+
+	public double getQuantidadeConvidados() {
 		return quantidadeConvidados;
 	}
 
-	public void setQuantidadeConvidados(Integer quantidadeConvidados) {
+	public void setQuantidadeConvidados(double quantidadeConvidados) {
 		this.quantidadeConvidados = quantidadeConvidados;
 	}
 
@@ -22,21 +22,21 @@ public class Contrato {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-	
+
 	public int getQuantidadeGarcons() {
-		return this.quantidadeConvidados / 15;
+		return (int) Math.ceil(this.quantidadeConvidados / 15);
 	}
-		 
+
 	public double getTaxaGarcon() {
 		return this.getQuantidadeGarcons() * 250;
 	}
-	
+
 	public double getValorTotal() {
 		double total = getTaxaGarcon() + quantidadeConvidados * 22.9;
 		if(isSobremesa() == true) {
-			return total *= 1.1;
+			return Math.round((total *= 1.1 * 100) / 100);
 		}else {
-			return total;
+			return Math.round((total * 100) / 100);
 		}
 	}
 
