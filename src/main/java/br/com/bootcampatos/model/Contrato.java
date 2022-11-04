@@ -1,17 +1,35 @@
 package br.com.bootcampatos.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Contrato {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
+	private Long id;
+
+	@OneToMany
 	private Cliente cliente;
-	private double quantidadeConvidados;
+	private Integer quantidadeConvidados;
 	private boolean sobremesa;
+	@OneToMany
 	private Empresa empresa;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 
 	public double getQuantidadeConvidados() {
 		return quantidadeConvidados;
 	}
 
-	public void setQuantidadeConvidados(double quantidadeConvidados) {
+	public void setQuantidadeConvidados(Integer quantidadeConvidados) {
 		this.quantidadeConvidados = quantidadeConvidados;
 	}
 
@@ -24,7 +42,7 @@ public class Contrato {
 	}
 
 	public int getQuantidadeGarcons() {
-		return (int) Math.ceil(this.quantidadeConvidados / 15);
+		return (int) Math.ceil((double)this.quantidadeConvidados / 15);
 	}
 
 	public double getTaxaGarcon() {

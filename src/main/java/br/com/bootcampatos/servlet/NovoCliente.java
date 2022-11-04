@@ -3,6 +3,7 @@ package br.com.bootcampatos.servlet;
 import java.io.IOException;
 
 import br.com.bootcampatos.dao.ClienteDao;
+import br.com.bootcampatos.dao.DAO;
 import br.com.bootcampatos.dao.TelefoneDao;
 import br.com.bootcampatos.model.Cliente;
 import br.com.bootcampatos.model.Telefone;
@@ -27,16 +28,15 @@ public class NovoCliente extends HttpServlet {
 		String paramCpf = request.getParameter("cpf");
 		String paramTelefone = request.getParameter("telefone");
 		String paramEmail = request.getParameter("email");
-		String paramTipoTelefone = request.getParameter("tipoTelefone");
 		
 		
-		Telefone telefone = new Telefone(paramTelefone, paramTipoTelefone);		
-		TelefoneDao telefoneDao = new TelefoneDao(JPAUtil.getEntityManager());
-		if(telefoneDao.getTelefoneByNumber(telefone.getNumero()) != null) {
-			telefoneDao.insert(telefone);			
-		}
+		Telefone telefone = new Telefone(paramTelefone);
+
+		DAO<Telefone> daotel = new DAO<>(JPAUtil.getEntityManager());
+		if(daotel.getTelefoneByNumber(telefone.getNumero()) != null){
+			daotel.insert(telefone);}
 		else {
-			telefone = telefoneDao.getTelefoneByNumber(paramTelefone);
+			telefone = daotel.getTelefoneByNumber(paramTelefone);
 		}
 		
 		Cliente cliente = new Cliente(paramNome, paramCpf, telefone,paramEmail);
@@ -46,5 +46,10 @@ public class NovoCliente extends HttpServlet {
 		
 		
 		response.sendRedirect("listaClientes");
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/front/cadastro.jsp").forward(req, resp);
 	}
 }
