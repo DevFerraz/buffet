@@ -36,7 +36,7 @@ public class NovoCliente extends HttpServlet {
 		if(daotel.getTelefoneByNumber(telefone.getNumero()) != null){
 			daotel.insert(telefone);}
 		else {
-			telefone = daotel.getTelefoneByNumber(paramTelefone);
+			paramTelefone = daotel.getTelefoneByNumber(String.valueOf(telefone));
 		}
 		
 		Cliente cliente = new Cliente(paramNome, paramCpf, telefone,paramEmail);

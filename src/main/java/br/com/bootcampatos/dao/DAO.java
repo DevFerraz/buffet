@@ -1,7 +1,5 @@
 package br.com.bootcampatos.dao;
 
-import br.com.bootcampatos.model.Telefone;
-
 import javax.persistence.EntityManager;
 
 public class DAO<E> {
@@ -18,7 +16,7 @@ public class DAO<E> {
         this.em.close();
     }
 
-    public Telefone getTelefoneByNumber(String numero) {
+    public String getTelefoneByNumber(String numero) {
        return numero;
     }
 }

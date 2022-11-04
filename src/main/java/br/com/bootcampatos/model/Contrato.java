@@ -2,12 +2,7 @@ package br.com.bootcampatos.model;
 
 import javax.persistence.*;
 
-@Entity
 public class Contrato {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
-	private Long id;
 
 	@OneToMany
 	private Cliente cliente;
@@ -16,13 +11,6 @@ public class Contrato {
 	@OneToMany
 	private Empresa empresa;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 
 	public double getQuantidadeConvidados() {
