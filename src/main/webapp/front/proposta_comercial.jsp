@@ -31,7 +31,7 @@
 </nav>
 <h4>Proposta comercial</h4>
 <main>
-    <>
+    ${contrato.valorTotal}
 </main>
 
 <footer>

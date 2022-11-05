@@ -30,7 +30,7 @@ public class NovoContrato extends HttpServlet {
         Boolean isWithDessert = Boolean.valueOf(request.getParameter("isWithDessert"));
         Integer qtdConvidados = Integer.valueOf(request.getParameter("qtdConvidados"));
 
-        Cliente cliente = new ClienteDao(JPAUtil.getEntityManager()).findById(clienteById)
+        Cliente cliente = new ClienteDao(JPAUtil.getEntityManager()).findById(clienteById);
         Contrato contrato = new Contrato(qtdConvidados, isWithDessert, cliente);
 
         request.setAttribute("contrato", contrato);
