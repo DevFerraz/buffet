@@ -8,6 +8,11 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	public Long getId() {
+		return id;
+	}
+
 	private String nome;
 	private String cpf;
 	private String telefone;

@@ -32,8 +32,15 @@
     <form action="${orcamento}" method="post"> <!--post para nao mostrar os dados na url-->
         <h1>Orcamento</h1>
         <p>
-            <label for="nome">Nome do cliente:</label>
-            <input class="nome" type="text" name="nome" id="nome" required maxlength="50">
+            <label for="clienteById">Nome do cliente:</label>
+            <select id="clienteById" name="clienteById">
+                <c:forEach items="${clientes}"  var="elemento">
+                    <option value="${elemento.id}">
+                            ${elemento.cpf}-${elemento.nome}
+                    </option>
+                </c:forEach>
+            </select>
+<%--            <input class="nome" type="text" name="nome" id="nome" required maxlength="50">--%>
         </p>
         <p>
             <label for="qtdConvidados">Quantidade de convidados:</label>

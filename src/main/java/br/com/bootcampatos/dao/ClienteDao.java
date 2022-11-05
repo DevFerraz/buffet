@@ -14,8 +14,13 @@ public class ClienteDao extends DAO<Cliente> {
 
 
     public List<Cliente> getAll() {
-        return new ArrayList<Cliente>();
+        return em.createQuery("SELECT cliente FROM Cliente cliente ORDER BY cliente.id",
+                        Cliente.class)
+                .getResultList();
     }
 
+    public Cliente findById(Long id) {
+        return em.find(Cliente.class, id);
+    }
 }
 
