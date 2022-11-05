@@ -31,6 +31,7 @@
 </nav>
 <h4>Proposta comercial</h4>
 <main>
+    <p>O valor total do contrato fica em: </p>
     ${contrato.valorTotal}
 </main>
 
