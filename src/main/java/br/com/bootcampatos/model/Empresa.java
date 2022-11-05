@@ -1,10 +1,27 @@
 package br.com.bootcampatos.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Empresa {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String cnpj;
 	private String nome;
-	private String telefone1;
-	
+	private String telefone;
+
+	public Empresa(String cnpj, String nome, String telefone) {
+		this.cnpj = cnpj;
+		this.nome = nome;
+		this.telefone = telefone;
+	}
+	public Empresa(){
+	}
+
 	public String getCnpj() {
 		return cnpj;
 	}
@@ -17,11 +34,11 @@ public class Empresa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getTelefone1() {
-		return telefone1;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setTelefone1(String telefone1) {
-		this.telefone1 = telefone1;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	
 }

@@ -33,8 +33,9 @@ public class NovoCliente extends HttpServlet {
 		
 		clienteDao.insert(cliente);
 		
-		
-		response.sendRedirect("listaClientes");
+		request.setAttribute("mensagem", "Cliente cadastrado com sucesso!");
+		request.getRequestDispatcher("/front/index.jsp").forward(request, response);
+		//response.sendRedirect("front/index.jsp");
 	}
 
 	@Override
