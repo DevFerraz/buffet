@@ -16,7 +16,4 @@ public class DAO<E> {
         this.em.close();
     }
 
-    public String getTelefoneByNumber(String numero) {
-       return numero;
-    }
 }

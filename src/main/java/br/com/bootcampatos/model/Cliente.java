@@ -9,10 +9,8 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	@Column(unique = true)
 	private String cpf;
-	@OneToOne
-	private Telefone telefone;
+	private String telefone;
 	private String email;
 	
 	public Cliente() {
@@ -25,7 +23,7 @@ public class Cliente {
 		this.email = email;
 	}
 	
-	public Cliente(String nome, String cpf, Telefone telefone, String email) {		
+	public Cliente(String nome, String cpf, String telefone, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
@@ -40,11 +38,11 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public Telefone getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Telefone telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
