@@ -31,8 +31,11 @@
 </nav>
 <h4>Proposta comercial</h4>
 <main>
-    <p>O valor total do contrato fica em: </p>
-    ${contrato.valorTotal}
+    ${contrato.empresa.string}
+    <br>
+      <%--<p>A quantidade de garçons contratados será de: ${contrato.getquantidadegarcons}</p>--%>
+    <br>
+        <p>O valor total do contrato é de R$ ${contrato.valorTotal}</p>
 </main>
 
 <footer>

@@ -5,11 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 public class Empresa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+
 	private String cnpj;
 	private String nome;
 	private String telefone;
@@ -20,6 +19,9 @@ public class Empresa {
 		this.telefone = telefone;
 	}
 	public Empresa(){
+		this.cnpj = "43.789.256/0001-99";
+		this.nome = "Elegance Buffet";
+		this.telefone = "(21) 3000-2000";
 	}
 
 	public String getCnpj() {
@@ -40,5 +42,11 @@ public class Empresa {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
+
+	public String getString() {
+		return "A empresa de nome: " + this.nome + "<br> inscrita sob o CNPJ: " +
+				this.cnpj + "<br> de telefone " + this.telefone
+				+ "<br> apresenta, sob todos os termos legais, a seguinte proposta " +
+				"comercial: <br>";
+	}
 }

@@ -12,9 +12,16 @@ public class Contrato{
 	private boolean sobremesa;
 	@ManyToOne
 	private Cliente cliente;
+	@Transient
+	private Empresa empresa;
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
 
 
 	public Contrato(Integer quantidadeConvidados, boolean sobremesa, Cliente cliente) {
+		this.empresa = new Empresa();
 		this.cliente = cliente;
 		this.quantidadeConvidados = quantidadeConvidados;
 		this.sobremesa = sobremesa;
@@ -23,13 +30,6 @@ public class Contrato{
 
 	}
 
-	public Empresa getEmpresa(){
-		Empresa empresa = new Empresa();
-		empresa.setCnpj("43.789.256/0001-99");
-		empresa.setNome("Elegance Buffet");
-		empresa.setTelefone("(21) 3000-2000");
-		return empresa;
-	}
 
 	public double getQuantidadeConvidados() {
 		return quantidadeConvidados;

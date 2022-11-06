@@ -20,37 +20,37 @@
 <header>
     <img src="${logo}" alt="">
 </header>
+<main>
+    <nav>
+        <a href="${index}">Inicial</a>
+        <a href="${orcamento}">Orcamento</a>
+        <a href="${cadastro}">Cadastro</a>
+        <a href="${consulta}">Consulta</a>
+    </nav>
 
-<nav>
-    <a href="${index}">Inicial</a>
-    <a href="${orcamento}">Orcamento</a>
-    <a href="${cadastro}">Cadastro</a>
-    <a href="${consulta}">Consulta</a>
-</nav>
-
-<form action="${cadastro}" method="post"> <!--post para nao mostrar os dados na url-->
-    <h1>Cadastro</h1>
-    <p>
-        <label for="nome">Nome:</label>
-        <input class="nome" type="text" name="nome" id="nome" required maxlength="50">
-    </p>
-    <p>
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" id="cpf" required maxlength="50">
-    </p>
-    <p>
-        <label for="telefone">Telefone:</label>
-        <input type="number" name="telefone" id="telefone" required maxlength="50">
-    </p>
-    <p>
-        <label for="email">E-mail:</label>
-        <input type="text" name="email" id="email" required maxlength="50">
-    </p>
-    <p>
-        <input class="submit_reset" type="submit" value="Cadastrar">
-        <input class="submit_reset" type="reset" value="Limpar">
-    </p>
-</form>
+    <form action="${cadastro}" method="post"> <!--post para nao mostrar os dados na url-->
+        <h1>Cadastro</h1>
+        <p>
+            <label for="nome">Nome:</label>
+            <input class="nome" type="text" name="nome" id="nome" required maxlength="50">
+        </p>
+        <p>
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" id="cpf" required maxlength="50">
+        </p>
+        <p>
+            <label for="telefone">Telefone:</label>
+            <input type="number" name="telefone" id="telefone" required maxlength="50">
+        </p>
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" required maxlength="50">
+        </p>
+        <p>
+            <input class="submit_reset" type="submit" value="Cadastrar">
+            <input class="submit_reset" type="reset" value="Limpar">
+        </p>
+    </form>
 </main>
 
 
